@@ -1,3 +1,48 @@
+def estimate_crack_time(password: str) -> str:
+    """
+    Estimate time to crack password using brute force.
+    Returns human-readable time.
+    """
+
+    if not password:
+        return "Instantly"
+
+    charset_size = 0
+
+    if any(c.islower() for c in password):
+        charset_size += 26
+    if any(c.isupper() for c in password):
+        charset_size += 26
+    if any(c.isdigit() for c in password):
+        charset_size += 10
+    if any(not c.isalnum() for c in password):
+        charset_size += 32  # special characters
+
+    length = len(password)
+
+    combinations = charset_size ** length
+    guesses_per_second = 10_000_000_000  # 10 billion
+
+    seconds = combinations / guesses_per_second
+
+    return _format_time(seconds)
+
+def _format_time(seconds: float) -> str:
+    if seconds < 1:
+        return "Less than a second"
+    elif seconds < 60:
+        return f"{int(seconds)} seconds"
+    elif seconds < 3600:
+        return f"{int(seconds // 60)} minutes"
+    elif seconds < 86400:
+        return f"{int(seconds // 3600)} hours"
+    elif seconds < 31536000:
+        return f"{int(seconds // 86400)} days"
+    elif seconds < 315360000:
+        return f"{int(seconds // 31536000)} years"
+    else:
+        return "Centuries"
+
 def calculate_score(validation_result: dict, pattern_result: dict = None) -> tuple:
     score = 0
 
