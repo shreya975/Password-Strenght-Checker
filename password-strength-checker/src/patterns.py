@@ -1,16 +1,28 @@
 import re
+import os
 
-COMMON_PASSWORDS = {
-    "password", "123456", "12345678", "qwerty", "admin",
-    "welcome", "abc123", "letmein"
-}
+
+def load_common_passwords() -> set:
+    """
+    Load common passwords from data/common_passwords.txt
+    """
+    base_dir = os.path.dirname(os.path.dirname(__file__))
+    file_path = os.path.join(base_dir, "data", "common_passwords.txt")
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            return {line.strip().lower() for line in f if line.strip()}
+    except FileNotFoundError:
+        return set()
+
+
+COMMON_PASSWORDS = load_common_passwords()
+
 
 def detect_patterns(password: str) -> dict:
     """
     Detect weak password patterns.
-    Returns a dictionary of detected issues.
     """
-
     issues = {
         "common_password": False,
         "repeated_chars": False,
