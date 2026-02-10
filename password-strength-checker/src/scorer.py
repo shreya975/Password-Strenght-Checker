@@ -1,9 +1,4 @@
-def calculate_score(validation_result: dict) -> tuple:
-    """
-    Calculate password strength score and label.
-    Returns (score, strength).
-    """
-
+def calculate_score(validation_result: dict, pattern_result: dict = None) -> tuple:
     score = 0
 
     if validation_result.get("length"):
@@ -17,7 +12,17 @@ def calculate_score(validation_result: dict) -> tuple:
     if validation_result.get("special"):
         score += 25
 
-    # Strength classification
+    # Pattern penalties
+    if pattern_result:
+        if pattern_result.get("common_password"):
+            score -= 40
+        if pattern_result.get("repeated_chars"):
+            score -= 20
+        if pattern_result.get("sequential_chars"):
+            score -= 20
+
+    score = max(score, 0)
+
     if score <= 30:
         strength = "Weak"
     elif score <= 60:
