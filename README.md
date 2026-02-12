@@ -58,25 +58,29 @@ A modern, security-focused password strength analyzer that evaluates passwords i
 
 ## 📂 Project Structure
 
-password-strength-analyzer/
+password-security-analyzer/
 │
 ├── src/
-│ ├── validator.py
-│ ├── scorer.py
-│ ├── patterns.py
-│ └── suggestions.py
+│   ├── validator.py
+│   ├── scorer.py
+│   ├── patterns.py
+│   └── suggestions.py
 │
 ├── data/
-│ └── common_passwords.txt
+│   └── common_passwords.txt
 │
 ├── web/
-│ ├── index.html
-│ ├── style.css
-│ └── script.js
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── screenshots/
+│   ├── weak-password.png
+│   ├── medium-password.png
+│   └── strong-password.png
 │
 ├── main.py
 └── README.md
-
 
 ---
 
@@ -89,3 +93,4 @@ password-strength-analyzer/
 ### Python (CLI Version)
 ```bash
 python main.py
+
