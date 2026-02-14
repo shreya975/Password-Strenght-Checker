@@ -1,4 +1,10 @@
-# 🔐 Password Security Analyzer
+<h1 align="center">🔐 Password Security Analyzer</h1>
+
+<p align="center">
+  Security-Focused Real-Time Password Strength & Risk Analyzer
+</p>
+
+---
 
 A modern, security-focused password strength analyzer that evaluates passwords in real time using rule-based validation, pattern detection, entropy-based crack-time estimation, and actionable security insights — presented with a professional, product-grade web UI.
 
@@ -10,35 +16,61 @@ A modern, security-focused password strength analyzer that evaluates passwords i
 - Password length validation
 - Uppercase, lowercase, digit, and special character checks
 - Real-time strength scoring (0–100)
-- Strength classification: ⚠️ Weak, 🟡 Medium, 🟢 Strong, 🔒 Very Strong
+- Strength classification:
+  - ⚠️ Weak  
+  - 🟡 Medium  
+  - 🟢 Strong  
+  - 🔒 Very Strong  
+
+---
 
 ### 🧠 Advanced Security Intelligence
 - Detection of weak patterns (sequences, repeated characters)
 - Common password detection using an external dataset
 - Entropy-based crack-time estimation (GPU brute-force model)
 
+---
+
 ### 💡 User Guidance
 - Clear improvement suggestions
 - Security insights explaining *why* a password is weak
 - Breach-style warning for predictable or common passwords
+
+---
 
 ### 🎨 Professional Web Interface
 - Dark-mode, glassmorphism UI
 - Animated strength meter
 - Live feedback while typing
 - Password visibility toggle
-- Clean, SaaS-style design
+- Clean SaaS-style layout
+
+---
+
+## 🔐 Security Perspective
+
+This analyzer models how attackers evaluate password strength by considering:
+
+- Character set size (lowercase, uppercase, digits, symbols)
+- Password length
+- Predictable patterns (sequences, repeated characters)
+- Common password databases
+- Estimated GPU-based brute-force attack speeds
+
+Crack-time estimation is calculated using entropy principles to simulate realistic attack scenarios.
+
+The goal is not only to rate passwords, but to explain structural weaknesses and promote security awareness.
 
 ---
 
 ## 🖥️ Tech Stack
 
-**Backend / Logic**
+### Backend / Logic
 - Python
 - Regex-based validation
 - Modular architecture (validator, scorer, patterns, suggestions)
 
-**Frontend**
+### Frontend
 - HTML5
 - CSS3 (Glassmorphism, animations)
 - Vanilla JavaScript (real-time analysis)
@@ -47,17 +79,20 @@ A modern, security-focused password strength analyzer that evaluates passwords i
 
 ## 📸 Preview
 
-> Screenshots show:
-> - Empty state
-> - Weak password analysis
-> - Strong password analysis with crack-time estimation
+### Weak Password Example
+![Weak Password](screenshots/weak-password.png)
 
-*(Screenshots included in repository)*
+### Medium Password Example
+![Medium Password](screenshots/medium-password.png)
+
+### Very Strong Password Example
+![Strong Password](screenshots/strong-password.png)
 
 ---
 
 ## 📂 Project Structure
 
+```bash
 password-security-analyzer/
 │
 ├── src/
@@ -82,15 +117,13 @@ password-security-analyzer/
 ├── main.py
 └── README.md
 
----
+▶️ How to Run
 
-## ▶️ How to Run
+🌐 Web Version
 
-### Web Version
-1. Open `web/index.html` in your browser
-2. Start typing a password to see real-time analysis
+Open web/index.html in your browser
 
-### Python (CLI Version)
-```bash
+Start typing a password to see real-time analysis
+
+🖥️ Python (CLI Version)
 python main.py
-
