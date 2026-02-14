@@ -80,13 +80,13 @@ The goal is not only to rate passwords, but to explain structural weaknesses and
 ## 📸 Preview
 
 ### Weak Password Example
-![Weak Password](screenshots/weak-password.png)
+![Weak Password](Screenshots/weak-password.png)
 
 ### Medium Password Example
-![Medium Password](screenshots/medium-password.png)
+![Medium Password](Screenshots/medium-password.png)
 
 ### Very Strong Password Example
-![Strong Password](screenshots/strong-password.png)
+![Strong Password](Screenshots/strong-password.png)
 
 ---
 
